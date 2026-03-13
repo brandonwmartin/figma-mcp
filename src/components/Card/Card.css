@@ -1,0 +1,38 @@
+.card {
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: var(--spacing-lg);
+  gap: var(--spacing-lg);
+}
+
+.card--standard {
+  background-color: var(--surface-primary);
+  border: var(--border-width-sm) solid var(--color-neutral-200);
+}
+
+.card--dark {
+  background-color: var(--fill-inverse);
+}
+
+.card__image {
+  display: block;
+  width: 100%;
+  border-radius: var(--border-radius-md);
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  
+}
+
+.card--dark .card__heading {
+  color: var(--fill-primary);
+}
+
+.card--dark .card__description {
+  color: var(--text-inverse);
+}
