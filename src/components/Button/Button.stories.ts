@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/web-components-vite';
 import { html } from 'lit';
-import { Button } from './Button';
+import { Button, type ButtonProps } from './Button';
 
-const meta: Meta = {
+const meta: Meta<ButtonProps> = {
   title: 'Components/Button',
+  render: (args) => Button(args),
 };
 
 export default meta;
-type Story = StoryObj;
+type Story = StoryObj<ButtonProps>;
 
 export const AllVariants: Story = {
   render: () => html`
@@ -39,31 +40,54 @@ export const AllVariants: Story = {
 };
 
 export const Primary: Story = {
-  render: () => Button({ variant: 'primary', size: 'large', label: 'Primary Button' }),
+  args: {
+    variant: 'primary',
+    size: 'large',
+    label: 'Primary Button',
+  },
 };
 
 export const Secondary: Story = {
-  render: () => Button({ variant: 'secondary', size: 'large', label: 'Secondary Button' }),
+  args: {
+    variant: 'secondary',
+    size: 'large',
+    label: 'Secondary Button',
+  },
 };
 
 export const Outline: Story = {
-  render: () => Button({ variant: 'outline', size: 'large', label: 'Outline Button' }),
+  args: {
+    variant: 'outline',
+    size: 'large',
+    label: 'Outline Button',
+  },
 };
 
 export const IconBefore: Story = {
-  render: () => Button({ variant: 'primary', size: 'large', label: 'Icon Before', icon: 'add', iconPosition: 'before' }),
+  args: {
+    variant: 'primary',
+    size: 'large',
+    label: 'Icon Before',
+    icon: 'add',
+    iconPosition: 'before',
+  },
 };
 
 export const IconAfter: Story = {
-  render: () => Button({ variant: 'primary', size: 'large', label: 'Icon After', icon: 'arrow_forward', iconPosition: 'after' }),
+  args: {
+    variant: 'primary',
+    size: 'large',
+    label: 'Icon After',
+    icon: 'arrow_forward',
+    iconPosition: 'after',
+  },
 };
 
 export const Disabled: Story = {
-  render: () => html`
-    <div style="display: flex; gap: 16px;">
-      ${Button({ variant: 'primary', size: 'large', label: 'Primary', disabled: true })}
-      ${Button({ variant: 'secondary', size: 'large', label: 'Secondary', disabled: true })}
-      ${Button({ variant: 'outline', size: 'large', label: 'Outline', disabled: true })}
-    </div>
-  `,
+  args: {
+    variant: 'primary',
+    size: 'large',
+    label: 'Disabled Button',
+    disabled: true,
+  },
 };

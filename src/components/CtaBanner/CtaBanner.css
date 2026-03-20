@@ -1,7 +1,7 @@
 @reference "tailwindcss";
 
 .cta-banner {
-  @apply flex items-center;
+  @apply flex items-center w-fit;
   border-radius: var(--spacing-2xl);
   gap: var(--spacing-xl);
   padding: var(--spacing-4xl) var(--spacing-5xl);

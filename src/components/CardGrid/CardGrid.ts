@@ -9,7 +9,7 @@ export interface CardGridProps {
 export const CardGrid = ({ cards = [] }: CardGridProps): TemplateResult => {
   return html`
     <div class="card-grid">
-      ${cards.map((card) => html`<div class="card-grid__item">${Card(card)}</div>`)}
+      ${cards.map((card) => html`${Card(card)}`)}
     </div>
   `;
 };

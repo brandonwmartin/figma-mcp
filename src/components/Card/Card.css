@@ -1,7 +1,7 @@
 @reference "tailwindcss";
 
 .card {
-  @apply flex flex-col overflow-hidden;
+  @apply flex flex-col overflow-hidden w-fit;
   border-radius: var(--border-radius-lg);
   gap: var(--spacing-md);
   padding: var(--spacing-lg);

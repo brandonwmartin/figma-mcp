@@ -4,19 +4,19 @@ import './Card.css';
 export type CardVariant = 'standard' | 'dark';
 
 export interface CardProps {
-  actions?: TemplateResult | null;
-  description?: string;
-  heading?: string;
-  media?: TemplateResult | null;
   variant?: CardVariant;
+  media?: TemplateResult | null;
+  heading?: string;
+  description?: string;
+  actions?: TemplateResult | null;
 }
 
 export const Card = ({
-  actions = null,
-  description = "Here's some support text.",
-  heading = 'This is a standard card heading',
-  media = null,
   variant = 'standard',
+  media = null,
+  heading = 'This is a standard card heading',
+  description = "Here's some support text.",
+  actions = null,
 }: CardProps): TemplateResult => {
   return html`
     <section class="card card--${variant}">
