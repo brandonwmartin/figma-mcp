@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/web-components-vite'
+import '../styles/tailwind.css';
 import '../styles/design-tokens.css';
 import '../styles/typography.css';
 

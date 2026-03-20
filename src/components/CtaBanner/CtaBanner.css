@@ -1,0 +1,63 @@
+@reference "tailwindcss";
+
+.cta-banner {
+  @apply flex items-center;
+  border-radius: var(--spacing-2xl);
+  gap: var(--spacing-xl);
+  padding: var(--spacing-4xl) var(--spacing-5xl);
+}
+
+.cta-banner--inverse {
+  background-color: var(--fill-inverse);
+}
+
+.cta-banner--brand {
+  background-color: var(--fill-brand);
+}
+
+.cta-banner--primary {
+  background-color: var(--fill-primary);
+}
+
+.cta-banner__content {
+  @apply flex flex-col flex-1;
+  gap: var(--spacing-md);
+}
+
+.cta-banner__heading {
+  font-family: var(--family-heading);
+  font-size: var(--font-size-9xl);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-heading);
+  margin: 0;
+}
+
+.cta-banner--inverse .cta-banner__heading,
+.cta-banner--brand .cta-banner__heading {
+  color: var(--text-inverse);
+}
+
+.cta-banner--primary .cta-banner__heading {
+  color: var(--text-primary);
+}
+
+.cta-banner__description {
+  font-family: var(--family-body);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  margin: 0;
+}
+
+.cta-banner--inverse .cta-banner__description,
+.cta-banner--brand .cta-banner__description {
+  color: var(--text-inverse);
+}
+
+.cta-banner--primary .cta-banner__description {
+  color: var(--text-primary);
+}
+
+.cta-banner__action {
+  @apply shrink-0;
+}

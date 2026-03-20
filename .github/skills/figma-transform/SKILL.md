@@ -34,8 +34,8 @@ Resolve the output artifact name before writing any code.
 - Otherwise, ask the user before proceeding:
 
 > **What would you like to name this [component / stylesheet]?**
-> Figma frame name: **`[frameName]`**
-> Reply with a custom name or **"default"** to use `[frameName]`.
+> Figma frame name: **`[FrameName]`**
+> Reply with a custom name or **"default"** to use `[FrameName]`.
 
 ---
 

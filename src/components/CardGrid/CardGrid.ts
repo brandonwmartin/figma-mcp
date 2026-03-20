@@ -1,18 +1,15 @@
 import { html, TemplateResult } from 'lit';
-import { Card } from '../Card/Card';
-import type { CardProps } from '../Card/Card';
 import './CardGrid.css';
+import { Card, CardProps } from '../Card/Card';
 
 export interface CardGridProps {
-  items?: CardProps[];
+  cards?: CardProps[];
 }
 
-export const CardGrid = ({
-  items = [],
-}: CardGridProps = {}): TemplateResult => {
+export const CardGrid = ({ cards = [] }: CardGridProps): TemplateResult => {
   return html`
     <div class="card-grid">
-      ${items.map((item) => Card(item))}
+      ${cards.map((card) => html`<div class="card-grid__item">${Card(card)}</div>`)}
     </div>
   `;
 };

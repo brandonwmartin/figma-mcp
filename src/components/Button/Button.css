@@ -1,18 +1,16 @@
 .btn {
-  align-items: center;
+  @apply cursor-pointer flex items-center relative select-none;
   border: none;
   border-radius: var(--border-radius-lg);
-  cursor: pointer;
-  display: inline-flex;
   font-family: var(--family-body);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-body);
   gap: var(--spacing-sm);
-  letter-spacing: 0;
   line-height: var(--line-height-body);
   text-align: center;
   white-space: nowrap;
-  width: fit-content;
+  display: inline-flex;
+  align-items: center;
 }
 
 .btn:disabled {
@@ -27,8 +25,6 @@
   padding: var(--spacing-sm) var(--spacing-lg);
 }
 
-/* Primary */
-
 .btn--primary {
   background-color: var(--fill-brand);
   color: var(--text-inverse);
@@ -39,11 +35,9 @@
 }
 
 .btn--primary:disabled {
-  background-color: var(--fill-secondary);
-  color: var(--color-neutral-500);
+  background-color: var(--color-neutral-300);
+  color: var(--text-secondary);
 }
-
-/* Secondary */
 
 .btn--secondary {
   background-color: var(--color-orange-500);
@@ -55,16 +49,14 @@
 }
 
 .btn--secondary:disabled {
-  background-color: var(--fill-secondary);
-  color: var(--color-neutral-500);
+  background-color: var(--color-neutral-300);
+  color: var(--text-secondary);
 }
-
-/* Outline */
 
 .btn--outline {
   background-color: transparent;
   border: var(--border-width-sm) solid var(--fill-brand);
-  color: var(--fill-brand);
+  color: var(--text-brand);
 }
 
 .btn--outline:hover:not(:disabled) {
@@ -75,16 +67,17 @@
 
 .btn--outline:disabled {
   background-color: var(--color-neutral-100);
-  border-color: var(--color-neutral-600);
-  color: var(--color-neutral-600);
+  border-color: var(--text-secondary);
+  color: var(--text-secondary);
 }
 
-/* Icon */
-
 .btn__icon {
+  @apply shrink-0;
   font-family: var(--family-icon);
   font-size: var(--font-size-md);
-  font-style: normal;
-  font-weight: var(--font-weight-body);
   line-height: var(--line-height-body);
+}
+
+.btn__label {
+  @apply shrink-0;
 }

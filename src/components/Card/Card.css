@@ -1,10 +1,10 @@
+@reference "tailwindcss";
+
 .card {
+  @apply flex flex-col overflow-hidden;
   border-radius: var(--border-radius-lg);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  gap: var(--spacing-md);
   padding: var(--spacing-lg);
-  gap: var(--spacing-lg);
 }
 
 .card--standard {
@@ -16,23 +16,58 @@
   background-color: var(--fill-inverse);
 }
 
-.card__image {
-  display: block;
-  width: 100%;
-  border-radius: var(--border-radius-md);
+.card__media {
+  @apply flex items-center w-full;
 }
 
-.card__body {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-  
+.card__media img {
+    @apply w-full;
+    border-radius: var(--border-radius-sm);
+  }
+
+.card__icon {
+  @apply shrink-0;
+  color: var(--text-brand);
+  font-family: var(--family-icon);
+  font-size: var(--font-size-4xl);
+  font-style: normal;
+  font-variation-settings: 'FILL' 0, 'GRAD' 0;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.card__content {
+  @apply flex flex-col;
+  gap: var(--spacing-sm);
+}
+
+.card__heading {
+  color: var(--text-primary);
+  font-family: var(--family-heading);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-heading);
+  margin: 0;
 }
 
 .card--dark .card__heading {
   color: var(--fill-primary);
 }
 
+.card__description {
+  color: var(--text-primary);
+  font-family: var(--family-body);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  margin: 0;
+}
+
 .card--dark .card__description {
   color: var(--text-inverse);
+}
+
+.card__button-group {
+  @apply flex flex-wrap items-start;
+  gap: var(--spacing-sm);
 }

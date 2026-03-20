@@ -3,10 +3,10 @@ name: 'figma-to-component'
 agent: 'agent'
 model: Claude Sonnet 4.6
 description: 'Generate a reusable component from the selected Figma frame.'
-argument-hint: 'componentName'
+argument-hint: 'ComponentName'
 ---
 
-`componentName`: {$input:componentName}
+`ComponentName`: {$input:ComponentName}
 
 Generate a reusable component for this project from the currently selected Figma frame.
 

@@ -1,42 +1,37 @@
-import { html, TemplateResult } from 'lit';
-import { Button } from '../Button/Button';
+import { html, TemplateResult, nothing } from 'lit';
 import './Card.css';
 
-export type CardTheme = 'standard' | 'dark';
+export type CardVariant = 'standard' | 'dark';
 
 export interface CardProps {
-  buttonLabel?: string;
-  buttonType?: 'primary' | 'secondary' | 'outline';
+  actions?: TemplateResult | null;
   description?: string;
   heading?: string;
-  image?: string;
-  imageAlt?: string;
-  onButtonClick?: () => void;
-  showButton?: boolean;
-  theme?: CardTheme;
+  media?: TemplateResult | null;
+  variant?: CardVariant;
 }
 
 export const Card = ({
-  buttonLabel = 'Primary Default',
-  buttonType = 'primary',
+  actions = null,
   description = "Here's some support text.",
   heading = 'This is a standard card heading',
-  image,
-  imageAlt = '',
-  onButtonClick,
-  showButton = true,
-  theme = 'standard',
+  media = null,
+  variant = 'standard',
 }: CardProps): TemplateResult => {
-  const classes = ['card', `card--${theme}`].join(' ');
-
   return html`
-    <section class=${classes}>
-      ${image ? html`<img class="card__image" src=${image} alt=${imageAlt} />` : ''}
-      <div class="card__body">
-        <span class="card__heading heading-sm">${heading}</span>
-        <span class="card__description body-default">${description}</span>
-        ${showButton ? Button({ label: buttonLabel, onClick: onButtonClick, variant: buttonType }) : ''}
+    <section class="card card--${variant}">
+      ${media
+        ? html`<div class="card__media">${media}</div>`
+        : nothing}
+
+      <div class="card__content">
+        <h3 class="card__heading">${heading}</h3>
+        <p class="card__description">${description}</p>
       </div>
+
+      ${actions
+        ? html`<div class="card__button-group">${actions}</div>`
+        : nothing}
     </section>
   `;
 };

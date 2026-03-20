@@ -13,9 +13,12 @@ Emit a complete component in a dedicated folder under `/src/components/`:
 
 - `/src/components/<ComponentName>/<ComponentName>.tsx` (or `.ts`/`.js` as appropriate)
 - Optional: `/src/components/<ComponentName>/<ComponentName>.css` for component-scoped styles
-- A Storybook story file: `/src/components/<ComponentName>/<ComponentName>.stories.tsx` (or `.stories.ts`/`.stories.js` as appropriate)
 
-Follow project conventions for file structure, props, and styling. Reference design tokens from `/styles/` for all color, spacing, and typography values.
+- `/src/components/<ComponentName>/<ComponentName>.tsx` (or `.ts`/`.js`)
+- `/src/components/<ComponentName>/<ComponentName>.css` for component-scoped styles (if needed)
+- `/src/components/<ComponentName>/<ComponentName>.stories.ts` — Storybook story with `title: 'Components/<Component Name>'` (e.g., `CardSlider` → `'Components/Card Slider'`)
+
+Follow project conventions for props, styling, and design tokens from `/styles/`.
 
 ---
 

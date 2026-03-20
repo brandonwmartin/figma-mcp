@@ -2,7 +2,7 @@ import type { StorybookConfig } from '@storybook/web-components-vite';
 
 const config: StorybookConfig = {
   "stories": [
-    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"
+    "../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   "addons": [],
   "framework": "@storybook/web-components-vite"
